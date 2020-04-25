@@ -7,6 +7,8 @@ on runTest(_command)
         end repeat
 
         keystroke "k" using {command down}
+        keystroke "u" using {control down}
+
         keystroke _command
         keystroke return
     end tell
