@@ -73,17 +73,17 @@ class PhpunitTestCommand(sublime_plugin.WindowCommand):
     def run_in_terminal(self, command):
         osascript_command = 'osascript '
 
-        if self.get_setting('terminal', 'Term') == 'iTerm':
+        if self.get_setting('terminal', 'Terminal') == 'iTerm':
             osascript_command += '"' + os.path.dirname(os.path.realpath(__file__)) + '/open-iterm.applescript"'
             osascript_command += ' "' + command + '"'
-        elif self.get_setting('terminal', 'Term') == 'Alacritty':
+        elif self.get_setting('terminal', 'Terminal') == 'Alacritty':
             osascript_command += '"' + os.path.dirname(os.path.realpath(__file__)) + '/open-alacritty.applescript"'
             osascript_command += ' "' + command + '"'
-        elif self.get_setting('terminal', 'Term') == 'Hyper':
+        elif self.get_setting('terminal', 'Terminal') == 'Hyper':
             osascript_command += '"' + os.path.dirname(os.path.realpath(__file__)) + '/open-hyper.applescript"'
             osascript_command += ' "' + command + '"'
         else:
-            osascript_command += '"' + os.path.dirname(os.path.realpath(__file__)) + '/run-command.applescript"'
+            osascript_command += '"' + os.path.dirname(os.path.realpath(__file__)) + '/open-terminal.applescript"'
             osascript_command += ' "' + command + '"'
             osascript_command += ' "PHPUnit Tests"'
 
