@@ -79,6 +79,9 @@ class PhpunitTestCommand(sublime_plugin.WindowCommand):
         elif self.get_setting('better_phpunit_terminal', 'Term') == 'Alacritty':
             osascript_command += '"' + os.path.dirname(os.path.realpath(__file__)) + '/open-alacritty.applescript"'
             osascript_command += ' "' + command + '"'
+        elif self.get_setting('better_phpunit_terminal', 'Term') == 'Hyper':
+            osascript_command += '"' + os.path.dirname(os.path.realpath(__file__)) + '/open-hyper.applescript"'
+            osascript_command += ' "' + command + '"'
         else:
             osascript_command += '"' + os.path.dirname(os.path.realpath(__file__)) + '/run-command.applescript"'
             osascript_command += ' "' + command + '"'
