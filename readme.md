@@ -1,19 +1,24 @@
-# Sublime PHPUnit
+# Better PHPUnit
 
-Convenient Sublime Text commands for running your PHPUnit tests. Scans up the directory tree to find the closest phpunit.xml file and runs phpunit from there. If it can't find one, it just runs phpunit from `/`.
+Convenient Sublime Text commands for running your PHPUnit tests. Scans up the directory tree to find the closest `phpunit.xml` file and runs phpunit from there. If it can't find one, it just runs phpunit from `/`.
 
 ## Installation
 
+### From packages control
+
+Use [Package Control](http://wbond.net/sublime_packages/package_control) (Preferences -> Package Control -> Install Package -> Better PHPUnit) to install this plugin.
+
+### Manual
 
 Installation is as simple as cloning the repository into your Sublime Text install's `Packages` folder:
 
 ```bash
-git clone https://github.com/adamwathan/sublime-phpunit ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/sublime-phpunit
+git clone https://github.com/dinhquochan/better-phpunit ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Better\ PHPUnit
 ```
 
 ## Available Commands & Example Keybindings
 
-You can find the commands in the command palette under "Sublime PHPUnit", or map any of these commands to whatever shortcuts you want:
+You can find the commands in the command palette under "Better PHPUnit", or map any of these commands to whatever shortcuts you want:
 
 Here's the full list of commands:
 
@@ -38,13 +43,14 @@ Here are some example keybindings:
 
 ```
 
-## Using iTerm2 instead of Terminal.app
+## Using others instead of Terminal.app
 
-By default, this package uses macOS's built-in Terminal.app. If you want to use iTerm2, you can do so changing the terminal in your settings:
+By default, this package uses macOS's built-in **Terminal.app**. If you want to use another terminal, you should give **Sublime Text** Accessibility permissions. To enable this, go to `System Preferences > Security & Privacy > Privacy > Accessibility` and grant permission for Sublime Text.
+You can do so changing the terminal in your settings `Sublime Text > Preferences > Packages Settings > Better PHPUnit > Settings - User`. Terminals supported: `iTerm`, `Alacritty`, `Hyper`.
 
 ```
 {
-    "phpunit-sublime-terminal": "iTerm",
+    "termial": "{termial}",
 }
 ```
 
@@ -54,8 +60,17 @@ If you use [fish shell](https://fishshell.com/), specify this in your settings:
 
 ```
 {
-    "phpunit-sublime-shell": "fish"
+    "phpunit_sublime_shell": "fish"
 }
 ``` 
 
 This will instruct Sublime PHPUnit to connect the commands using fish's `; and` instead of bash's `&&`.
+
+## Credits
+
+- [Adam Wathan](https://github.com/adamwathan/)
+- [Dinh Quoc Han](https://github.com/dinhquochan/)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
