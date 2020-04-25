@@ -60,7 +60,7 @@ If you use [fish shell](https://fishshell.com/), specify this in your settings:
 
 ```
 {
-    "phpunit_sublime_shell": "fish"
+    "shell": "fish"
 }
 ``` 
 
