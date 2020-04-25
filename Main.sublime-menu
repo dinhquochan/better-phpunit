@@ -29,7 +29,7 @@
                         [
                             {
                                 "command": "open_file",
-                                "args": {"file": "${packages}/Better PHPUnit/Better PHPUnit.sublime-settings"},
+                                "args": {"file": "${packages}/Better PHPUnit/Default.sublime-settings"},
                                 "caption": "Settings – Default"
                             },
                             {
