@@ -1,0 +1,46 @@
+[
+    {
+        "id": "tools",
+        "caption": "Tools",
+        "children":
+        [
+            {
+                "caption": "Better PHPUnit...",
+                "command": "show_overlay",
+                "args": {"overlay": "command_palette", "text": "Better PHPUnit: " }
+            }
+        ]
+    },
+    {
+        "caption": "Preferences",
+        "mnemonic": "n",
+        "id": "preferences",
+        "children":
+        [
+            {
+                "caption": "Package Settings",
+                "mnemonic": "P",
+                "id": "package-settings",
+                "children":
+                [
+                    {
+                        "caption": "Better PHPUnit",
+                        "children":
+                        [
+                            {
+                                "command": "open_file",
+                                "args": {"file": "${packages}/Better PHPUnit/Better PHPUnit.sublime-settings"},
+                                "caption": "Settings – Default"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {"file": "${packages}/User/Better PHPUnit.sublime-settings"},
+                                "caption": "Settings – User"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
