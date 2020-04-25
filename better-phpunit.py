@@ -14,7 +14,7 @@ class PhpunitTestCommand(sublime_plugin.WindowCommand):
         return sublime.load_settings("Preferences.sublime-settings").get(key, default)
 
     def get_cmd_connector(self):
-        if 'fish' == self.get_setting('phpunit_sublime_shell', 'bash'):
+        if 'fish' == self.get_setting('better_phpunit_shell', 'bash'):
             return '; and '
         else:
             return ' && '
@@ -73,10 +73,10 @@ class PhpunitTestCommand(sublime_plugin.WindowCommand):
     def run_in_terminal(self, command):
         osascript_command = 'osascript '
 
-        if self.get_setting('phpunit_sublime_terminal', 'Term') == 'iTerm':
+        if self.get_setting('better_phpunit_terminal', 'Term') == 'iTerm':
             osascript_command += '"' + os.path.dirname(os.path.realpath(__file__)) + '/open-iterm.applescript"'
             osascript_command += ' "' + command + '"'
-        elif self.get_setting('phpunit_sublime_terminal', 'Term') == 'Alacritty':
+        elif self.get_setting('better_phpunit_terminal', 'Term') == 'Alacritty':
             osascript_command += '"' + os.path.dirname(os.path.realpath(__file__)) + '/open-alacritty.applescript"'
             osascript_command += ' "' + command + '"'
         else:
