@@ -11,10 +11,10 @@ class PhpunitTestCommand(sublime_plugin.WindowCommand):
     lastTestCommand = False
 
     def get_setting(self, key, default=None):
-        return sublime.load_settings("Preferences.sublime-settings").get(key, default)
+        return sublime.load_settings("Better PHPUnit.sublime-settings").get(key, default)
 
     def get_cmd_connector(self):
-        if 'fish' == self.get_setting('better_phpunit_shell', 'bash'):
+        if 'fish' == self.get_setting('shell', 'bash'):
             return '; and '
         else:
             return ' && '
@@ -73,13 +73,13 @@ class PhpunitTestCommand(sublime_plugin.WindowCommand):
     def run_in_terminal(self, command):
         osascript_command = 'osascript '
 
-        if self.get_setting('better_phpunit_terminal', 'Term') == 'iTerm':
+        if self.get_setting('terminal', 'Term') == 'iTerm':
             osascript_command += '"' + os.path.dirname(os.path.realpath(__file__)) + '/open-iterm.applescript"'
             osascript_command += ' "' + command + '"'
-        elif self.get_setting('better_phpunit_terminal', 'Term') == 'Alacritty':
+        elif self.get_setting('terminal', 'Term') == 'Alacritty':
             osascript_command += '"' + os.path.dirname(os.path.realpath(__file__)) + '/open-alacritty.applescript"'
             osascript_command += ' "' + command + '"'
-        elif self.get_setting('better_phpunit_terminal', 'Term') == 'Hyper':
+        elif self.get_setting('terminal', 'Term') == 'Hyper':
             osascript_command += '"' + os.path.dirname(os.path.realpath(__file__)) + '/open-hyper.applescript"'
             osascript_command += ' "' + command + '"'
         else:
